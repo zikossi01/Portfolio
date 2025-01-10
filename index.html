@@ -7,26 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY PORTFOLIO</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <header class="header">
-        <a href="#" class="logo">Zakaryiae.</a>
+    <header class="header text-white">
+        <a href="#home" class="logo">Zakaryiae.</a>
         <nav class="navbar">
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="#home" class="active">Home</a>
+            <a href="#home">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="home">
+    <section class="home" id="home">
         <div class="home-content">
-            <h1>Hi, I'm Moumni Zakariae</h1>
+            <h1 style="color: aliceblue;">Hi, I'm Moumni Zakaryiae</h1>
             <h3>JS Full-Stack Developer</h3>
-            <p>Full-Stack JavaScript Developer with experience in building dynamic web applications using React, Node.js, Express, and MongoDB. I specialize in both front-end and back-end development, focusing on creating responsive, user-friendly, and scalable solutions. I'm currently seeking new opportunities to apply my skills and collaborate on exciting projects. Feel free to check out my work below, and let's connect if you're looking for a dedicated developer to join your team!</p>
+            <p style="color: aliceblue;">Full-Stack JavaScript Developer with experience in building dynamic web applications using React, Node.js, Express, and MongoDB. I specialize in both front-end and back-end development, focusing on creating responsive, user-friendly, and scalable solutions. I'm currently seeking new opportunities to apply my skills and collaborate on exciting projects. Feel free to check out my work below, and let's connect if you're looking for a dedicated developer to join your team!</p>
             <div class="btn-box">
                 <a href="#">Hire Me</a>
                 <a href="#">Let's Talk</a>
@@ -40,49 +42,76 @@
         </div>
     </section>
 
-    <!-- New Section for Project Boxes -->
-    <section class="projects">
+    <section class="projects" id="projects">
         <h2>My Projects</h2>
         <div class="project-boxes">
-            <a href="https://github.com/yourusername/project1" class="project-box">
+            <a href="https://github.com/zikossi01/ENAA-calculator-project" class="project-box">
                 <div class="project-info">
-                    <h3>Project 1</h3>
-                    <p>Project description</p>
+                    <h3>Calculator</h3>
+                    <p>A simple web-based calculator that performs basic arithmetic operations like addition, subtraction, multiplication, and division.</p>
                 </div>
             </a>
-            <a href="https://github.com/yourusername/project2" class="project-box">
+            <a href="https://github.com/zikossi01/stock-manager" class="project-box">
                 <div class="project-info">
-                    <h3>Project 2</h3>
-                    <p>Project description</p>
+                    <h3>Stock-manager</h3>
+                    <p>An inventory management app that allows users to track stock levels, add products, and update their details, making it easier to manage products.</p>
                 </div>
             </a>
-            <a href="https://github.com/yourusername/project3" class="project-box">
+            <a href="https://github.com/zikossi01/task-managerJS" class="project-box">
                 <div class="project-info">
-                    <h3>Project 3</h3>
-                    <p>Project description</p>
+                    <h3>Task-manager</h3>
+                    <p>A task management application to create, track, and organize daily tasks with features for setting priorities and deadlines.</p>
                 </div>
             </a>
-            <a href="https://github.com/yourusername/project4" class="project-box">
+            <a href="https://github.com/zikossi01/blog_static" class="project-box">
                 <div class="project-info">
-                    <h3>Project 4</h3>
-                    <p>Project description</p>
-                </div>
-            </a>
-            <a href="https://github.com/yourusername/project5" class="project-box">
-                <div class="project-info">
-                    <h3>Project 5</h3>
-                    <p>Project description</p>
-                </div>
-            </a>
-            <a href="https://github.com/yourusername/project6" class="project-box">
-                <div class="project-info">
-                    <h3>Project 6</h3>
-                    <p>Project description</p>
+                    <h3>Blog page</h3>
+                    <p>A static blog page to showcase articles and posts, with a clean layout and user-friendly design.</p>
                 </div>
             </a>
         </div>
     </section>
 
+    <section class="contact" id="contact">
+        <div class="container py-5">
+            <h2 class="text-center text-white mb-4">Contact Me</h2>
+            <p class="text-center text-white mb-5">If you want to get in touch, feel free to send me a message!</p>
+            <form action="#" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name" class="form-label text-white">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label text-white">Your Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label text-white">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Write your message..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                var target = this.hash;
+                var $target = $(target);
+                $('html, body').animate({
+                    scrollTop: $target.offset().top
+                }, 800, function () {
+                    window.location.hash = target;
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
