@@ -17,3 +17,14 @@ $(document).ready(function () {
         });
     });
 });
+$(document).ready(function () {
+    function animateGreeting() {
+        $('#greeting').css('width', '0'); // Reset width to 0
+        $('#greeting').animate({ width: '100%' }, 5000, 'linear', function () {
+            animateGreeting(); // Call the function again after animation ends
+        });
+    }
+    
+    animateGreeting(); // Start the animation when the page loads
+});
+

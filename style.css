@@ -8,24 +8,59 @@
 }
 
 body {
-    
     color: #ededed;
-
-
-
 }
+
 .header {
     position: fixed;
     top: 0;
-    left: 0; 
+    left: 0;
     width: 100%;
-    padding: 20px 10%;
-    background: transparent;
+    padding: 10px 10%;
+    background: rgba(0, 171, 240, 0.1); /* Light transparent blue */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+  
+    border-radius: 8px; /* Smooth corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    backdrop-filter: blur(10px); /* Optional glass effect */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
+.header:hover {
+    background: rgba(0, 171, 240, 0.2); /* Slightly darker on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between links */
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
 .logo {
     font-size: 25px;
     color: #ededed;
@@ -211,6 +246,11 @@ color:#f4f4f4;
         overflow: hidden;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .project-image {
+        width: 80%;
+        height: 80%;
+        object-fit: contain; /* Ensures the image covers the whole box without distortion */
+      }
     .project-info {
         position: absolute;
         text-align: center;
@@ -352,3 +392,63 @@ color:#f4f4f4;
     background: #f1f1f1;
     border-radius: 10px;
 }
+.greeting-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Start with no width */
+    color: white;
+    animation: scroll-text 5s linear infinite;
+}
+
+@keyframes scroll-text {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+.footer {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #0077b5; /* LinkedIn blue */
+    color: #fff;
+}
+
+.social-icon:nth-child(2):hover {
+    background-color: #333; /* GitHub dark */
+}
+
+.social-icon:nth-child(3):hover {
+    background-color: #3b5998; /* Facebook blue */
+}
+
+.social-icon i {
+    display: block;
+}
+
+
